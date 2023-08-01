@@ -1,4 +1,4 @@
-my_dictionary = dict(
+card_dict = dict(
     spade2 = 2,
     spade3 = 3,
     spade4 = 4,
@@ -53,13 +53,16 @@ my_dictionary = dict(
 for key, value in my_dictionary.items():
     print(f"{key}: {value}")
 
+cardDict_list = list(card_dict.values())
+
+
 userHand = []
 dealderHand = []
 
 endGame = False
 
 while endgame == False:
-    cardDraw = "HOLD"
+    card_
 
 
 
