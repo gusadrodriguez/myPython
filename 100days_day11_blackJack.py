@@ -52,31 +52,42 @@ card_dict = dict(
 )
 
 #check key value pairs
-for key, value in my_dictionary.items():
+for key, value in card_dict.items():
     print(f"{key}: {value}")
 
 cardDict_list = list(card_dict.values())
 
-
-userHand = []
-dealerHand = []
+userHand = [random.choice(cardDict_list)]
+dealerHand = [random.choice(cardDict_list)]
 
 endGame = False
 
-while endgame == False:
-    for i in range(2):
+while endGame == False:
+    for i in range(1):
+        
         sel_card = random.choice(cardDict_list)
         for item in userHand:
-            if item == sel_card:
-                sel_card = random.choice(cardDict_list)
-            else:
+           if item != sel_card:
+                continue
+           else:
                 userHand.append(sel_card)
-        sel_card = random.choice(cardDict_list)
-        for item in dealerHand:
-            if item == sel_card:
-                sel_card = random.choice(cardDict_list)
+                print("this is:" userHand)
+       
+        sel_card = random.choice(cardDict_list)        
+        for item in userHand:
+            if item != sel_card:
+                for item in dealerHand:
+                    if item != sel_card:
+                        continue
+                    else:
+                        dealerHand.append(sel_card)
             else:
-                dealerHand.append(sel_card)
+                sel_card = random.choice(cardDict_list)
+        print(userHand)
+        print ("break")
+        print(dealerHand)
+
+    endGame = False
     
 
 
