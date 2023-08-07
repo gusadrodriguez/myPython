@@ -1,3 +1,5 @@
+import random
+
 card_dict = dict(
     spade2 = 2,
     spade3 = 3,
@@ -57,14 +59,25 @@ cardDict_list = list(card_dict.values())
 
 
 userHand = []
-dealderHand = []
+dealerHand = []
 
 endGame = False
 
 while endgame == False:
-    card_
-
-
+    for i in range(2):
+        sel_card = random.choice(cardDict_list)
+        for item in userHand:
+            if item == sel_card:
+                sel_card = random.choice(cardDict_list)
+            else:
+                userHand.append(sel_card)
+        sel_card = random.choice(cardDict_list)
+        for item in dealerHand:
+            if item == sel_card:
+                sel_card = random.choice(cardDict_list)
+            else:
+                dealerHand.append(sel_card)
+    
 
 
 
