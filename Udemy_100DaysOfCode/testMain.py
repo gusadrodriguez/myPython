@@ -1,4 +1,6 @@
 import random
+from blackJackFunctions import draw 
+from blackJackFunctions import compareHands
 
 card_dict = dict(
     spade2 = 2,
@@ -55,46 +57,13 @@ card_dict = dict(
 #for key, value in card_dict.items():
  #   print(f"{key}: {value}")
 
+#create a list of values from the dictionary
 cardDict_list = list(card_dict.values())
 
-userHand = [random.choice(cardDict_list)]
-dealerHand = [random.choice(cardDict_list)]
-
-print(dealerHand, userHand)
-
-def draw(x):
-    for i in range(1):
-        new_card = random.choice(cardDict_list)
-        return new_card
-
-def checkHand(deck, draw):
-    for item in deck:
-        if item == draw:
-            return True
-        else:
-            return False
-
-def compareHands(userHand, dealerHand):
-    pos = 0
-    for item in userHand:
-        if item != dealerHand[pos]:
-            pos+=1
-        else:
-            return True
-    return False
-
-match = True
-if match == compareHands(userHand, dealerHand):
-    for item in userHand:
-        pos = 0
-        if item == dealHand[0]
-
-    for 
-else:
-    match = False
-
-if match == 
+#select the first card from the decks .. may have matching cards but we will create a function to test that
+playerHand = draw(2,cardDict_list)
+dealerHand = draw(2, cardDict_list)
 
 
-    
+print(playerHand, dealerHand)
 
