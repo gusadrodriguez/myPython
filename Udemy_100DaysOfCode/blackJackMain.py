@@ -62,7 +62,7 @@ cardDict_list = list(card_dict.values())
 
 #select the first card from the decks .. may have matching cards but we will create a function to test that
 playerHand = draw(2,cardDict_list)
-dealerHand = draw(2, cardDict_list)
+dealerHand = draw(2,cardDict_list)
 
 print(playerHand, dealerHand)
 
