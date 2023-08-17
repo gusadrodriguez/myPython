@@ -1,16 +1,39 @@
 #function draws the first hand
 import random
 
+#draw card from deck
 def draw(x, cardDeck):
+    condition = True
     drawArray = []
-    for i in range (x):
-        while True:
-            if drawArray[i] not in drawArray:
-                new_card = random.choice(cardDeck)
-                drawArray.append(new_card)
+    newCard = random.choice(cardDeck)
+    drawArray.append(newCard)
+    for i in range (x-1):
+        while condition: 
+            newCard = random.choice(cardDeck)
+            if newCard not in drawArray:
+                drawArray.append(newCard)
+                condition = False
             else:
-                return False 
+                condition = True
     return drawArray
+
+#draw card from deck
+def newDraw(x, cardDeck):
+    drawArray = []
+    for i in range(x):
+        newCard = random.choice(cardDeck)
+        drawArray.append(newCard)
+    return drawArray
+
+#Check the hand and remove all of items in hand from deck
+def removeFromDeck(hand, deck):
+    length = len(hand)
+    for i in range (length):
+        if hand[i] in deck:
+            deck.remove(hand[i])
+        else:
+            continue
+    return deck
 
 #this will remove a specific card from the deck
 def removeCard(hand, card):

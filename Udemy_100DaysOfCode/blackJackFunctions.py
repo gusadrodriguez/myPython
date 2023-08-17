@@ -2,10 +2,36 @@
 import random
 
 def draw(x, cardDeck):
+    condition = True
     drawArray = []
-    for i in range (x):
-        new_card = random.choice(cardDeck)
-        drawArray.append(new_card)
+    newCard = random.choice(cardDeck)
+    drawArray.append(newCard)
+    for i in range (x-1):
+        while condition: 
+            newCard = random.choice(cardDeck)
+            if newCard not in drawArray:
+                drawArray.append(newCard)
+                condition = False
+            else:
+                condition = True
+    return drawArray
+
+def removeFromDeck(hand, deck):
+    length = len(hand)
+    for i in range (length):
+        if hand[i] in deck:
+            deck.remove(hand[i])
+        else:
+            continue
+    print(deck)
+    return deck
+
+#draw card from deck
+def newDraw(x, cardDeck):
+    drawArray = []
+    for i in range(x):
+        newCard = random.choice(cardDeck)
+        drawArray.append(newCard)
     return drawArray
 
 #this will remove a specific card from the deck

@@ -1,8 +1,10 @@
 import random
 from blackJackFunctions import draw 
+from blackJackFunctions import newdraw
 from blackJackFunctions import compareHands
+from blackJackFunctions import removeFromDeck
 
-card_dict = dict(
+cardDict = dict(
     spade2 = 2,
     spade3 = 3,
     spade4 = 4,
@@ -58,11 +60,16 @@ card_dict = dict(
  #   print(f"{key}: {value}")
 
 #create a list of values from the dictionary
-cardDict_list = list(card_dict.values())
+cardDictList = list(cardDict.values())
 
 #select the first card from the decks .. may have matching cards but we will create a function to test that
-playerHand = draw(2,cardDict_list)
-dealerHand = draw(2,cardDict_list)
+playerHand = draw(2,cardDictList)
+
+print(playerHand)
+
+cardDictList = removeFromDeck(playerHand, cardDictList)
+
+dealerHand = draw(2,cardDictList)
 
 print(playerHand, dealerHand)
 
