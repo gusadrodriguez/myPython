@@ -59,3 +59,26 @@ def compareHands(playerHand, dealerHand):
             return True
         else:
             return False
+
+def check17(dealerHand):
+    total = 0
+    for card in dealerHand:
+        total = card + total
+    if total >= 17:
+        return True
+    else:
+        False    
+
+def has22(hand):
+    counter = 0
+    for card in hand:
+        if card == 11:
+            counter++
+            if counter > 1:
+                #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! left off here - trying to make an iterative way to count for the number of 11's and replace ONE with a 1 value marker only when 22 is drawn the first time
+
+    #check the items in the array
+    #if they equal 22 then change 11 to 1
+    #draw a single card and add to the deck
+    #if draw 11 request if player wants to count as 1 or 11
+    #if < 21 ask if the player wishes to draw or stay

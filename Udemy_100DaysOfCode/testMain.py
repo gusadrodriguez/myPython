@@ -77,7 +77,3 @@ cardDictList = removeFromDeck(dealerHand, cardDictList)
 
 print(playerHand, dealerHand)
 
-
-
-
-
