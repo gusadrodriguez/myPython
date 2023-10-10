@@ -1,8 +1,10 @@
 import random
 from blackJackFunctions import draw 
-from blackJackFunctions import newdraw
+from blackJackFunctions import newDraw
 from blackJackFunctions import compareHands
 from blackJackFunctions import removeFromDeck
+from blackJackFunctions import has22
+from blackJackFunctions import replaceAce
 
 cardDict = dict(
     spade2 = 2,
@@ -55,10 +57,6 @@ cardDict = dict(
     diaAce = 11
 )
 
-#check key value pairs
-#for key, value in card_dict.items():
- #   print(f"{key}: {value}")
-
 #create a list of values from the dictionary
 cardDictList = list(cardDict.values())
 
@@ -73,6 +71,24 @@ dealerHand = draw(2,cardDictList)
 
 print(playerHand, dealerHand)
 
+#test
+playerHand = [11,11]
+
+checkDoubleAce = has22(playerHand)
+print(checkDoubleAce)
+if checkDoubleAce == True:
+    aceChoice = input("change ace value to 1? \yn y/n")
+    if aceChoice == "y":
+        replaceAce(playerHand)
+
+print(playerHand)
+#check players hand for 22 or above - give choice to replace card in deck with 1 for 11
+#check dealers hand for 22 or above - run RNG for choice
+
+#give choice to hit or fold
+#share player total
+#share dealer total
+#determine winner
 
 
 

@@ -50,6 +50,7 @@ def checkDraw(deck, draw):
             return False
 
 #function compares the hand of the user & and the dealer to see if they match - if they do have a matching item we will remove it with a function
+#This function servers no purpose since there are multiple cards with the same value in the deck - add to code ARCHIVE
 def compareHands(playerHand, dealerHand):
     pos = 0
     for item in playerHand:
@@ -60,6 +61,7 @@ def compareHands(playerHand, dealerHand):
         else:
             return False
 
+#checks if the total is equal to or above 17 for the dealers hand, if it is then the dealer will stay
 def check17(dealerHand):
     total = 0
     for card in dealerHand:
@@ -69,12 +71,18 @@ def check17(dealerHand):
     else:
         False    
 
+#checks if either dealer or player has 22 then gives player a choice to chose to convert the ACE from 11 to 1, with an additional draw - for the dealer in order to automate we will have the RNG choose if it stays 22 the game is over, if less than the dealer draws one more
 def has22(hand):
     counter = 0
     for card in hand:
         if card == 11:
-            counter++
-            if counter > 1:
+            counter += 1
+    if counter >1:
+        return True
+    else:
+        return False
+    
+
                 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! left off here - trying to make an iterative way to count for the number of 11's and replace ONE with a 1 value marker only when 22 is drawn the first time
 
     #check the items in the array

@@ -3,6 +3,7 @@ from blackJackFunctions import draw
 from blackJackFunctions import newDraw
 from blackJackFunctions import compareHands
 from blackJackFunctions import removeFromDeck
+from blackJackFunctions 
 
 cardDict = dict(
     spade2 = 2,
